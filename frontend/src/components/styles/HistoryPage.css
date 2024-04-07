@@ -1,0 +1,49 @@
+.game-history-container {
+    display: flex;          
+    flex-direction: column; 
+    align-items: center;    
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+  }
+
+  #history-title {
+    text-align: center;
+    font-size: 3em;;
+  }
+  
+  .history-list {
+    margin: 20px 0;
+  }
+  
+  .history-item {
+    width: 100%;          
+    background-color: #cccccc;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .history-item p {
+    margin: 0; 
+    padding: 0.5em 0; 
+    text-align: center;
+  }
+
+  .history-subheader {
+    font-weight: bold; 
+    font-size: 1.5em;
+    margin-bottom: 0.5em; 
+  }  
+
+  .button-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 5px;
+    padding-bottom: 60px;
+  }
+  
+  
+  
