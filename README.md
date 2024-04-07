@@ -29,6 +29,7 @@ Additionally, users can navigate to the game history page by clicking the game h
 The game page also has an end session navigation button where user will be brought back to the login page. By clicking the button, the session will end and the user's game history will be lost. To play again, the user can login by entering the player name and clicking play to start a new session.
 
 ## Accessibility
+
 To incorporate accessibility, a few measures were taken:
 1. Buttons with icons were used so as to gave players a better understanding of ths function of the buttons
 2. Buttons upon hovering will be grey scaled
@@ -46,15 +47,19 @@ Below is the link of the walkthrough video of the web application using NVDA Scr
 https://drive.google.com/file/d/1hzgMEkrVFn7WwK7iYQ4X71fLfF3v_EAO/view?usp=sharing
 
 ## Running the program 
+
+To view the deployed webapp: https://tic-tac-toe-accessibility-d5868a1101a7.herokuapp.com/
+
 To run the application locally, 
 1. Clone the repository to your local desktop
 2. Navigate to Maven project to run maven commands, mvn clean install package
 3. Navigate to target folder and right click on the tic-tac-toe-0.0.1-SNAPSHOT.jar file and select copy path
 4. Run the following commands on your terminal "java -jar "(paste from copy path)"". This should run the program.
 
-A more detailed walkthrough is given in the video link above 
+A more detailed walkthrough is given in the video link above (at the time of the video the webapp has not been deployed)
 
 ## API Functions
+
 ![alt text](images/image-6.png)
 Post Method for http://localhost:8080/game/start initialises game which is used in the createGame function in the GamePage component.
 
