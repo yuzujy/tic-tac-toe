@@ -1,0 +1,49 @@
+.game-history-container {
+    display: flex;          /* Use flexbox layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center;    /* Center children horizontally */
+    width: 80%;
+    margin: auto;
+    justify-content: center;
+  }
+
+  #history-title {
+    text-align: center;
+    font-size: 3em;;
+  }
+  
+  .history-list {
+    margin: 20px 0;
+  }
+  
+  .history-item {
+    width: 100%;            /* Make history items full width within the container */
+    background-color: #cccccc;
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 8px;
+    box-sizing: border-box; /* Include padding and border in the element's total width */
+    text-align: center;
+  }
+  
+  .history-item p {
+    margin: 0; /* Remove default margin */
+    padding: 0.5em 0; /* Add padding for spacing and readability */
+    text-align: center;
+  }
+
+  .history-subheader {
+    font-weight: bold; /* Make the text bold */
+    font-size: 1.5em; /* Make it larger than normal text */
+    margin-bottom: 0.5em; /* Add some space below the subheader */
+  }  
+
+  .button-container {
+    display: flex;
+    justify-content: center; /* Horizontally center the button */
+    margin-top: 5px; /* Add margin at the top */
+    padding-bottom: 60px;
+  }
+  
+  
+  

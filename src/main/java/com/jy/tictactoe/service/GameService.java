@@ -12,6 +12,7 @@ import com.jy.tictactoe.storage.GameStorage;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
 import java.util.UUID;
 
 import static com.jy.tictactoe.model.GameStatus.*;
@@ -45,16 +46,24 @@ public class GameService {
         GameStorage.getInstance().setGame(game);
         return game;
     }
-
-    public Game connectToRandomGame(Player player2) throws NotFoundException {
-        Game game = GameStorage.getInstance().getGames().values().stream()
-                .filter(it -> it.getStatus().equals(NEW))
-                .findFirst().orElseThrow(() -> new NotFoundException("Game not found"));
-        game.setPlayer2(player2);
-        game.setStatus(IN_PROGRESS);
-        GameStorage.getInstance().setGame(game);
-        return game;
+    
+    public Game connectToRandomGame(Player player) {
+        Optional<Game> availableGame = GameStorage.getInstance().getGames().values().stream()
+                .filter(game -> game.getStatus().equals(NEW))
+                .findFirst();
+    
+        if (availableGame.isPresent()) {
+            Game game = availableGame.get();
+            game.setPlayer2(player);
+            game.setStatus(IN_PROGRESS);
+            GameStorage.getInstance().setGame(game);
+            return game;
+        } else {
+            // No available games, so create a new one
+            return createGame(player);
+        }
     }
+    
 
     public Game gamePlay(GamePlay gamePlay) throws NotFoundException, InvalidGameException {
         if (!GameStorage.getInstance().getGames().containsKey(gamePlay.getGameId())) {

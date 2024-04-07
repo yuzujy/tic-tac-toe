@@ -19,8 +19,8 @@ import java.util.stream.Collectors;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.messaging.simp.SimpMessagingTemplate;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +32,7 @@ import jakarta.servlet.http.HttpSession;
 @Slf4j
 @AllArgsConstructor
 @RequestMapping("/game")
+@CrossOrigin(origins = ("*")) //solve cors
 public class GameController {
 
     private final GameService gameService;
