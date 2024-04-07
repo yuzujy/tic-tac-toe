@@ -166,7 +166,7 @@ const GamePage = () => {
         alert("Congrats you're playing with: " + data.player1.login);
         setGameOn(true);
         setStarter(true);
-        setCaption("You have connected with player" + data.player1.login + ", start playing by making a move!");
+        setCaption("You have connected with " + data.player1.login + ", start playing by making a move!");
         setShouldConnect(true);
       })
       .catch(error => {

@@ -30,15 +30,20 @@ The game page also has an end session navigation button where user will be broug
 
 ## Accessibility
 To incorporate accessibility, a few measures were taken:
-    -  Buttons with icons were used so as to gave players a better understanding of ths function of the buttons
-    -  Buttons upon hovering will be grey scaled
-    -  Buttons should change its color upon clicking
-    -  Alerts are given during the game session to give players a better understanding of the game state
-    -  Semantic HTML was used as much as possible 
-    -  Aria attributes were incorporated into html and css
-    -  Captions are displayed throughout game session for players to better understand the game state
+1. Buttons with icons were used so as to gave players a better understanding of ths function of the buttons
+2. Buttons upon hovering will be grey scaled
+3. Buttons should change its color upon clicking
+4. Alerts are given during the game session to give players a better understanding of the game state
+5. Semantic HTML was used as much as possible 
+6. Aria attributes were incorporated into html and css
+7. Captions are displayed throughout game session for players to better understand the game state
+8. Colors chosen were at least contrast of Aa or above
+
+Captions legend for game moves:
+![alt text](image-16.png)
 
 Below is the link of the walkthrough video of the web application using NVDA Screen Reader
+https://drive.google.com/file/d/1hzgMEkrVFn7WwK7iYQ4X71fLfF3v_EAO/view?usp=sharing
 
 ## Running the program 
 To run the application locally, 
@@ -73,10 +78,24 @@ All the API functions are in the GameController.java file
 
 ## Architecture diagram
 
-## Short summart on design/infra decisions
+![alt text](image-15.png)
+
+## Short summary on design/infra decisions
+
+The architecture of this web application is centered around simplicity and accessibility, structured across three main pages: login, game, and history. This straightforward navigation aids users, particularly those with disabilities, in understanding the app’s workflow.
+
+Accessibility features are emphasized through a custom button component with descriptive icons, aiding users in recognizing their function quickly. The buttons also provide visual feedback via color changes, assisting users with visual impairments.
+
+The game board is interactive, with square colors changing to signify player moves, employing a color scheme chosen for its high contrast to accommodate color vision deficiencies (default square - blue, X - red, O - purple). Game state changes are communicated through clear captions and alerts, facilitating user comprehension.
+
+Semantic HTML and ARIA roles are implemented to enhance the accessibility of the content. Colors are chosen to comply with AA contrast standards to ensure readability.
+
+The server architecture utilizes in-memory storage, considering the casual nature of tic-tac-toe and obviating the need for persistent user accounts. This design allows for a session-based approach to game history, simplifying the user experience by avoiding the complexity of account management and continuous data storage. It is also to prevent the need for users to stress over remembering their login details and can enter the game page once they key in their player name. As such, the game history is only stored for that session until user decides to end session (by navigating to login page or exiting the browser)
+
+Real-time game interactions are enabled through WebSocket, ensuring a responsive and synchronized gaming experience for users. ReactJS is used for the frontend while SpringBoot is used for the backend. The frontend is packaged inside the SpringBoot project to run on the same port and eliminate the CORS problem when fetching data from backend.
 
 ## Future developments
 
-refresh. to login.sometimes when refresh, login details is lost, disrupt caption.
-websocket disconnection.
-long wait for websocket to be stablished. 
+1. Incorporate specific sounds for when a move is made on the tic tac toe board
+2. Handle websocket disconnection logic, user should be navigated back to login page while the other user should be notified of disconnection
+ 
