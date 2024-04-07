@@ -55,7 +55,7 @@ To run the application locally,
 1. Clone the repository to your local desktop
 2. Navigate to Maven project to run maven commands, mvn clean install package
 3. Navigate to target folder and right click on the tic-tac-toe-0.0.1-SNAPSHOT.jar file and select copy path
-4. Run the following commands on your terminal "java -jar "(paste from copy path)"". This should run the program.
+4. Run the following commands on your terminal "java -jar "(paste from copy path)"". This should run the program on http://localhost:8080.
 
 A more detailed walkthrough is given in the video link above (at the time of the video the webapp has not been deployed)
 
