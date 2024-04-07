@@ -41,6 +41,7 @@ To incorporate accessibility, a few measures were taken:
 8. Colors chosen were at least contrast of Aa or above
 
 Captions legend for game moves:
+
 ![alt text](images/image-16.png)
 
 Below is the link of the walkthrough video of the web application using NVDA Screen Reader
@@ -61,21 +62,26 @@ A more detailed walkthrough is given in the video link above (at the time of the
 ## API Functions
 
 ![alt text](images/image-6.png)
+
 Post Method for http://localhost:8080/game/start initialises game which is used in the createGame function in the GamePage component.
 
 ![alt text](images/image-7.png)
 ![alt text](images/image-8.png)
+
 Post Method for http://localhost:8080/game/connect connects the user to a specific game if passed in the gameid property. This is used in the connectToSpecificGame function in the Game Page component
 
 ![alt text](images/image-13.png)
+
 Post Method for http://localhost:8080/game/connect/random either connects user to a game that already has been created or creates a new game if there are no available games to be connected to. his is used in the connectToRandomGame function in the Game Page component
 
 ![alt text](images/image-9.png)
 ![alt text](images/image-10.png)
+
 Post Method for http://localhost:8080/game/gameplay updates the game state which is used in makeAMove function in GamePage component. the player type, coordinate X and coordinate Y and game id is passed into the the api function. The function returns a game class (game.java). 
 
 ![alt text](images/image-11.png)
 ![alt text](images/image-12.png)
+
 Get Method for http://localhost:8080/game/history retrieves the game history for that game session. The function returns a list of previous games. 
 The post function for http://localhost:8080/game/newSession creates a new session.
 
