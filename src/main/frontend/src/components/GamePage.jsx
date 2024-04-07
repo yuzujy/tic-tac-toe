@@ -56,6 +56,7 @@ const GamePage = () => {
           if (data.status === "FINISHED") {
             alert(`Game ended`);
             setGameOn(false);
+            setCaption(data.moveHistoryDescriptions[data.moveHistoryDescriptions.length - 1]);
           } else {
             let myFreq;
             let otherFreq;
